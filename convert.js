@@ -11,7 +11,9 @@ function convertComponent() {
     const convertedCode = getConvertedCode(getInputs(data), template[0]);
     
     createFile(`${filename[0]}.js`, convertedCode);
-    createFile(`${filename[0]}.css`, styles[0]); 
+    if (styles) {
+      createFile(`${filename[0]}.css`, styles[0]); 
+    } 
     
   });
 }
