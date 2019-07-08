@@ -11,13 +11,13 @@ function convertComponent() {
     const convertedCode = getConvertedCode(getInputs(data), template[0]);
     
     createFile(`${filename[0]}.js`, convertedCode);
-    createFile('styles.css', styles[0]); 
+    createFile(`${filename[0]}.css`, styles[0]); 
     
   });
 }
 
 function createFile(filename, data) {
-  fs.writeFile(__dirname + filename, data, err => err ? console.log(err) : console.log(`${filename} created.`)); 
+  fs.writeFile(`${__dirname}/${filename}`, data, err => err ? console.log(err) : console.log(`${filename} created.`)); 
 }
 
 function getConvertedCode(input, template) {
