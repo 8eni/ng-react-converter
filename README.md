@@ -19,8 +19,8 @@ Download `convert.js` to root of components directory.
 In the components folder run the below command to generate React component.
 
 ```node
-# Single component conversion
-node ./convert.js hello
+# Single component conversion, for multiple components append them with a space e.g. hello world 
+node .\convert.js hello
 ```
 New folder structure should include Hello.js and Hello.css
 ```
