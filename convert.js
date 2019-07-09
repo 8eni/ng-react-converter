@@ -1,8 +1,8 @@
 // Run script in root of directory
 const fs = require('fs')
 
-function convertComponent() {
-  fs.readFile(`${__dirname}/${process.argv[2]}.component.js`, 'utf8', (err, data) => {
+function convertComponent(file) {
+  fs.readFile(`${__dirname}/${file}.component.js`, 'utf8', (err, data) => {
     if (err) throw err;
 
     const filename = data.match(/(?<=export class )(.*)(?=Component {)/);
@@ -40,4 +40,6 @@ function getInputs(str) {
   return results;
 }
 
-convertComponent();
+for (let i = 2; i < process.argv.length; i++) {
+  convertComponent(process.argv[i]);
+}
