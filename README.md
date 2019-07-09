@@ -18,7 +18,7 @@ Download `convert.js` to root of components directory.
 ```
 In the components folder run the below command to generate React component.
 
-```nodejs
+```node
 # Single component conversion
 node ./convert.js hello
 ```
@@ -51,7 +51,7 @@ export class HelloComponent {
   @Input() lastname: string;
 }
 ```
-converts to...
+`node ./convert.js hello` converts to...
 ### React component
 ```javascript
 // Hello.js
